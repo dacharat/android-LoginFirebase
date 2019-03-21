@@ -86,6 +86,10 @@ public class NewPost extends AppCompatActivity {
                 Firebase childRef_name = mRootRef.child("Image_Title");
                 childRef_name.setValue(mName);
                 Toast.makeText(getApplicationContext(), "Update Info", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(NewPost.this, SignIn.class);
+                finish();
+                startActivity(i);
             }
         });
     }
