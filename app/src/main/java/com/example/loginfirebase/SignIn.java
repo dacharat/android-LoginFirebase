@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignIn extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView email;
+    private Button newPost, viewPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,22 @@ public class SignIn extends AppCompatActivity {
 
         email = (TextView) findViewById(R.id.email);
         email.setText(mAuth.getCurrentUser().getEmail());
+
+        newPost = (Button) findViewById(R.id.newPost);
+        viewPost = (Button) findViewById(R.id.viewPost);
+
+        newPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), NewPost.class));
+            }
+        });
+        viewPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     public void onLogoutButtonClicked(View view) {
