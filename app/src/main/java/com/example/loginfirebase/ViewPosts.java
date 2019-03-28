@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,9 +20,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ViewPosts extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private FirebaseDatabase firebaseDatabase;
-    private DatabaseReference myRef;
+    RecyclerView recyclerView;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference myRef;
     private FirebaseRecyclerAdapter<ViewSingleItem, ShowDataViewHolder> mFirebaseAdapter;
 
     @Override
