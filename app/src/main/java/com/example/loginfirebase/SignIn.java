@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignIn extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView email;
-    private Button newPost, viewPost;
+    private Button newPost, viewPost, location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class SignIn extends AppCompatActivity {
 
         newPost = (Button) findViewById(R.id.newPost);
         viewPost = (Button) findViewById(R.id.viewPost);
+        location = (Button) findViewById(R.id.location);
 
         newPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,12 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ViewPosts.class));
+            }
+        });
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewLocation.class));
             }
         });
     }
